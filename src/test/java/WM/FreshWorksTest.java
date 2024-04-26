@@ -26,28 +26,28 @@ public class FreshWorksTest {
 	public void setup(String browser) {
 		if (browser.equalsIgnoreCase("chrome")) {
 			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver();
-			// DesiredCapabilities cap = new DesiredCapabilities();
-			// cap.setCapability("browserName", "chrome");
-			// try {
-			// driver = new RemoteWebDriver(new
-			// URL("http://13.233.116.37:4444/wd/hub"), cap);
-			// } catch (MalformedURLException e) {
-			// e.printStackTrace();
-			// }
+			//driver = new ChromeDriver();
+			DesiredCapabilities cap = new DesiredCapabilities();
+			cap.setCapability("browserName", "chrome");
+			try {
+			driver = new RemoteWebDriver(new
+			URL("http://44.202.160.69:4444/wd/hub"), cap);
+			} catch (MalformedURLException e) {
+			e.printStackTrace();
+			}
 		}
 
 		else if (browser.equalsIgnoreCase("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
-			driver = new FirefoxDriver();
-			// DesiredCapabilities cap = new DesiredCapabilities();
-			// cap.setCapability("browserName", "firefox");
-			// try {
-			// driver = new RemoteWebDriver(new
-			// URL("http://13.233.116.37:4444/wd/hub"), cap);
-			// } catch (MalformedURLException e) {
-			// e.printStackTrace();
-			// }
+			//driver = new FirefoxDriver();
+			DesiredCapabilities cap = new DesiredCapabilities();
+			cap.setCapability("browserName", "firefox");
+			try {
+			driver = new RemoteWebDriver(new
+			URL("http://44.202.160.69:4444/wd/hub"), cap);
+			} catch (MalformedURLException e) {
+			e.printStackTrace();
+			}
 
 		}
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
